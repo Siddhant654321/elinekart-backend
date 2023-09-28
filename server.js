@@ -20,9 +20,7 @@ const app = express();
 // Body parser middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({
-  origin: 'https://elinekart.netlify.app/'
-}))
+app.use(cors())
 // Cookie parser middleware
 app.use(cookieParser());
 

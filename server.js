@@ -1,5 +1,6 @@
 import path from "path";
 import express from "express";
+import cors from 'cors';
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 dotenv.config();
@@ -19,7 +20,9 @@ const app = express();
 // Body parser middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use(cors({
+  origin: 'https://elinekart.netlify.app/'
+}))
 // Cookie parser middleware
 app.use(cookieParser());
 
